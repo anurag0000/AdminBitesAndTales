@@ -4,15 +4,448 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <ImageView
+        android:id="@+id/mainActivityLogo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/mainactivitylogo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/MainActivityTitleTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/yeon_sung"
+        android:text="Bites And Tales"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mainActivityLogo"
+        app:layout_constraintTop_toTopOf="@+id/mainActivityLogo" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderDetailsCardView"
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:outlineSpotShadowColor="@color/copyrightColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/MainActivityTitleTV">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#f4f4f4">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="8dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="8dp" />
+
+            <ImageView
+                android:id="@+id/infoLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/infoicon"
+                app:layout_constraintEnd_toEndOf="@id/pendingOrderTV"
+                app:layout_constraintStart_toStartOf="@+id/pendingOrderTV"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+            <TextView
+                android:id="@+id/pendingOrderTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/yeon_sung"
+                android:text="Pending Order"
+                android:textColor="@color/copyrightColor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toStartOf="@+id/completedOrderTV"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/infoLogo" />
+
+            <TextView
+                android:id="@+id/pendingItemsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="30"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/pendingOrderTV"
+                app:layout_constraintStart_toStartOf="@+id/pendingOrderTV"
+                app:layout_constraintTop_toBottomOf="@+id/pendingOrderTV" />
+
+
+            <ImageView
+                android:id="@+id/completedIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/completedicon"
+                app:layout_constraintEnd_toEndOf="@id/completedOrderTV"
+                app:layout_constraintStart_toStartOf="@+id/completedOrderTV"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+            <TextView
+                android:id="@+id/completedOrderTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/yeon_sung"
+                android:text="Completed\nOrder"
+                android:textAlignment="center"
+                android:textColor="@color/copyrightColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/wholeEarningTV"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/pendingOrderTV"
+                app:layout_constraintTop_toBottomOf="@id/completedIcon" />
+
+            <TextView
+                android:id="@+id/completedItemsTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="40"
+                android:textColor="#FFC107"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/completedOrderTV"
+                app:layout_constraintStart_toStartOf="@+id/completedOrderTV"
+                app:layout_constraintTop_toBottomOf="@+id/completedOrderTV" />
+
+
+            <ImageView
+                android:id="@+id/wholeEarningIcon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/dollaricon"
+                app:layout_constraintEnd_toEndOf="@id/wholeEarningTV"
+                app:layout_constraintStart_toStartOf="@+id/wholeEarningTV"
+                app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+            <TextView
+                android:id="@+id/wholeEarningTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/yeon_sung"
+                android:text="Whole Time\nEarning"
+                android:textAlignment="center"
+                android:textColor="@color/copyrightColor"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/completedOrderTV"
+                app:layout_constraintTop_toBottomOf="@id/wholeEarningIcon" />
+
+            <TextView
+                android:id="@+id/wholeEarningAmountTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/lato_bold"
+                android:text="$100"
+                android:textColor="#4CAF50"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/wholeEarningTV"
+                app:layout_constraintStart_toStartOf="@+id/wholeEarningTV"
+                app:layout_constraintTop_toBottomOf="@+id/wholeEarningTV" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/addMenuCardView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:outlineSpotShadowColor="@color/copyrightColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/allItemMenuCardView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/orderDetailsCardView">
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardgreen">
+
+            <ImageView
+                android:id="@+id/addicon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/addicon"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/addMenuTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Menu"
+                android:textColor="@color/copyrightColor"
+                android:fontFamily="@font/yeon_sung"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/addicon"
+                app:layout_constraintStart_toStartOf="@+id/addicon"
+                app:layout_constraintTop_toBottomOf="@+id/addicon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/allItemMenuCardView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:outlineSpotShadowColor="@color/copyrightColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/addMenuCardView"
+        app:layout_constraintTop_toTopOf="@+id/addMenuCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardgreen">
+
+            <ImageView
+                android:id="@+id/allItemicon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/eyeicon"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/allItemTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Item Menu"
+                android:textColor="@color/copyrightColor"
+                android:fontFamily="@font/yeon_sung"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/allItemicon"
+                app:layout_constraintStart_toStartOf="@+id/allItemicon"
+                app:layout_constraintTop_toBottomOf="@+id/allItemicon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileCardView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:outlineSpotShadowColor="@color/copyrightColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="@+id/addMenuCardView"
+        app:layout_constraintTop_toBottomOf="@+id/addMenuCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardgreen">
+
+            <ImageView
+                android:id="@+id/profileicon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/profileicon"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/profileTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textColor="@color/copyrightColor"
+                android:fontFamily="@font/yeon_sung"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/profileicon"
+                app:layout_constraintStart_toStartOf="@+id/profileicon"
+                app:layout_constraintTop_toBottomOf="@+id/profileicon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/createNewUserCardView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:outlineSpotShadowColor="@color/copyrightColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/allItemMenuCardView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/profileCardView"
+        app:layout_constraintTop_toTopOf="@+id/profileCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardgreen">
+
+            <ImageView
+                android:id="@+id/createNewUsericon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/usericon"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/createNewUserTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Item Menu"
+                android:textColor="@color/copyrightColor"
+                android:fontFamily="@font/yeon_sung"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/createNewUsericon"
+                app:layout_constraintStart_toStartOf="@+id/createNewUsericon"
+                app:layout_constraintTop_toBottomOf="@+id/createNewUsericon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/orderDispatchCardView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:outlineSpotShadowColor="@color/copyrightColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintStart_toStartOf="@+id/profileCardView"
+        app:layout_constraintTop_toBottomOf="@+id/profileCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardgreen">
+
+            <ImageView
+                android:id="@+id/orderDispatchIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ordericon"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/orderDispatchTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Order Dispatch"
+                android:textColor="#FFC107"
+                android:fontFamily="@font/yeon_sung"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/orderDispatchIcon"
+                app:layout_constraintStart_toStartOf="@+id/orderDispatchIcon"
+                app:layout_constraintTop_toBottomOf="@+id/orderDispatchIcon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/logoutCardView"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:outlineSpotShadowColor="@color/copyrightColor"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/createNewUserCardView"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/orderDispatchCardView"
+        app:layout_constraintTop_toTopOf="@+id/orderDispatchCardView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/cardgreen">
+
+            <ImageView
+                android:id="@+id/logouticon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/logouticon"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/logoutTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textColor="#FF0707"
+                android:fontFamily="@font/yeon_sung"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@+id/logouticon"
+                app:layout_constraintStart_toStartOf="@+id/logouticon"
+                app:layout_constraintTop_toBottomOf="@+id/logouticon" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/copyrightText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="20dp"
+        android:fontFamily="@font/yeon_sung"
+        android:text="Design By\nArtemis"
+        android:textAlignment="center"
+        android:textColor="@color/copyrightColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
